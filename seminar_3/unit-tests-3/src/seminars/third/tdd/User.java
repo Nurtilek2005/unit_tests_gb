@@ -2,8 +2,8 @@ package seminars.third.tdd;
 
 public class User {
 
-    private String name;
-    private String password;
+    String name;
+    String password;
 
     boolean isAuthenticate = false;
 
@@ -17,4 +17,5 @@ public class User {
     public boolean authenticate(String name, String password) {
         return false;
     }
+
 }
