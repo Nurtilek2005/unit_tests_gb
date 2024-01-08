@@ -10,9 +10,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SomeServiceTest {
    // 3.1.
-
-    void multipleThreeNotFiveReturnsFizz(int n) {
-        // assertEquals...
+    @Test
+    void multipleThreeNotFiveReturnsFizz() {
+        SomeService service = new SomeService();
+        assertEquals(service.fizzBuzz(9), "Fizz");
     }
 
+    @Test
+    void multipleThreeNotFiveReturnsBuzz() {
+        SomeService service = new SomeService();
+        assertEquals(service.fizzBuzz(50), "Buzz");
+    }
+
+    @Test
+    void multipleThreeAndFiveReturnsFizzBuzz() {
+        SomeService service = new SomeService();
+        assertEquals(service.fizzBuzz(15), "FizzBuzz");
+    }
 }
