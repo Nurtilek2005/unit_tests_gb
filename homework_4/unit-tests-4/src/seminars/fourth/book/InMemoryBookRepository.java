@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class InMemoryBookRepository implements BookRepository  {
+public class InMemoryBookRepository implements BookRepository {
     private final Map<String, Book> books;
 
     public InMemoryBookRepository() {
@@ -22,5 +22,27 @@ public class InMemoryBookRepository implements BookRepository  {
     @Override
     public List<Book> findAll() {
         return new ArrayList<>(books.values());
+    }
+
+    @Override
+    public List<Book> findBooksByTitle(String title) {
+        List<Book> foundBooks = new ArrayList<>();
+        for (Book tempBook : this.books.values()) {
+            if (tempBook.getTitle().contains(title)) {
+                foundBooks.add(tempBook);
+            }
+        }
+        return foundBooks;
+    }
+
+    @Override
+    public List<Book> findBooksByAuthor(String author) {
+        List<Book> foundBooks = new ArrayList<>();
+        for (Book tempBook : this.books.values()) {
+            if (tempBook.getAuthor().contains(author)) {
+                foundBooks.add(tempBook);
+            }
+        }
+        return foundBooks;
     }
 }
