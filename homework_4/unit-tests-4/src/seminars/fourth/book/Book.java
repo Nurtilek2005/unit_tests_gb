@@ -38,4 +38,12 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public String toString() {
+        StringBuilder bookInfo = new StringBuilder();
+        bookInfo.append(String.format("ID: %s, ", this.id));
+        bookInfo.append(String.format("Title: %s, ", this.title));
+        bookInfo.append(String.format("Author: %s", this.author));
+        return bookInfo.toString();
+    }
 }
